@@ -18,11 +18,8 @@ Fetches input and output data provided by kattis
 
 # Get zipfile and unzip.
 def fetch(problem, path=""):
-	def _reporthook(dataz, datao, data):
-		pass
-	
 	try:
-		response = urllib.request.urlretrieve(_URL_+problem, reporthook=_reporthook)
+		response = urllib.request.urlretrieve(_URL_+problem)
 		filename = response[0]
 		
 		with zipfile.ZipFile(filename) as _zip:
